@@ -1,0 +1,10 @@
+[flake8]
+max-line-length = 88
+# ignore = E501  # Commented out or removed
+exclude =
+    .git,
+    __pycache__,
+    venv,
+    .venv
+# You can add 'extend-ignore' here later if needed, e.g.:
+# extend-ignore = E203

@@ -8,8 +8,9 @@ class TestClassDemoInstance:
     def test_two(self):
         assert self.value == 1
 
-#Note that when grouped into a class, tests share class attributes, like value = 0
-#Therefore, test_two fails
 
-#We can use pytest -k TestClassDemoInstance -q to test only tests that match the
-#TestClassDemoInstance substring
+# Note that when grouped into a class, tests share class attributes, like value = 0
+# Therefore, test_two fails
+
+# We can use pytest -k TestClassDemoInstance -q to test only tests that match the
+# TestClassDemoInstance substring

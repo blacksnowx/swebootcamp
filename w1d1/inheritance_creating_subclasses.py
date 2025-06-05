@@ -4,7 +4,7 @@ class Employee:
     def __init__(self, first, last, pay):
         self.first = first
         self.last = last
-        self.email = first + '.' + last + "@company.com"
+        self.email = first + "." + last + "@company.com"
         self.pay = pay
 
     def fullname(self):
@@ -13,13 +13,15 @@ class Employee:
     def apply_raise(self):
         self.pay = int(self.pay * self.raise_amt)
 
+
 class Developer(Employee):
     raise_amt = 1.10
 
     def __init__(self, first, last, pay, prog_lang):
         super().__init__(first, last, pay)
-        #Employee.__init__(self, first, last, pay)
+        # Employee.__init__(self, first, last, pay)
         self.prog_lang = prog_lang
+
 
 class Manager(Employee):
     def __init__(self, first, last, pay, employees=None):
@@ -41,21 +43,22 @@ class Manager(Employee):
         for employee in self.employees:
             print(f"--> {employee.fullname()}")
 
-dev_1 = Developer('Corey', 'Schafer', 50000, 'Python')
-dev_2 = Developer('Test', 'Employee', 60000, 'Java')
-man_1 = Manager('Todd', 'Howard', 200000, [dev_1])
 
-#print(dev_1.email)
-#print(dev_1.prog_lang)
-#print(man_1.email)
-#man_1.add_emp(dev_2)
-#man_1.print_employees()
+dev_1 = Developer("Corey", "Schafer", 50000, "Python")
+dev_2 = Developer("Test", "Employee", 60000, "Java")
+man_1 = Manager("Todd", "Howard", 200000, [dev_1])
 
-#print(help(Developer))
+# print(dev_1.email)
+# print(dev_1.prog_lang)
+# print(man_1.email)
+# man_1.add_emp(dev_2)
+# man_1.print_employees()
 
-#print(dev_1.pay)
-#dev_1.apply_raise()
-#print(dev_1.pay)
+# print(help(Developer))
+
+# print(dev_1.pay)
+# dev_1.apply_raise()
+# print(dev_1.pay)
 
 print(isinstance(man_1, Manager))
 print(isinstance(man_1, Employee))

@@ -5,7 +5,7 @@ class Employee:
     def __init__(self, first, last, pay):
         self.first = first
         self.last = last
-        self.email = first + '.' + last + "@company.com"
+        self.email = first + "." + last + "@company.com"
         self.pay = pay
 
         Employee.num_of_emps += 1
@@ -22,7 +22,7 @@ class Employee:
 
     @classmethod
     def from_string(cls, emp_str):
-        first, last, pay = emp_str.split('-')
+        first, last, pay = emp_str.split("-")
         return cls(first, last, pay)
 
     @staticmethod
@@ -32,34 +32,35 @@ class Employee:
         return True
 
 
-emp_1 = Employee('Corey', 'Schafer', 50000)
-emp_2 = Employee('Test', 'User', 60000)
+emp_1 = Employee("Corey", "Schafer", 50000)
+emp_2 = Employee("Test", "User", 60000)
 
 import datetime
+
 my_date = datetime.date(2016, 7, 11)
 
 print(Employee.is_workday(my_date))
 
-#emp_str_1 = 'John-Doe-70000'
-#emp_str_2 = 'Steve-Smith-30000'
-#emp_str_3 = 'Jane-Doe-90000'
+# emp_str_1 = 'John-Doe-70000'
+# emp_str_2 = 'Steve-Smith-30000'
+# emp_str_3 = 'Jane-Doe-90000'
 
-#new_emp_1 = Employee.from_string(emp_str_1)
+# new_emp_1 = Employee.from_string(emp_str_1)
 
-#print(new_emp_1.email)
-#print(new_emp_1.pay)
+# print(new_emp_1.email)
+# print(new_emp_1.pay)
 
-#Employee.set_raise_amt(1.05)
+# Employee.set_raise_amt(1.05)
 
-#print(Employee.raise_amount)
-#print(emp_1.raise_amount)
-#print(emp_2.raise_amount)
+# print(Employee.raise_amount)
+# print(emp_1.raise_amount)
+# print(emp_2.raise_amount)
 
 # print(emp_1.__dict__)
-#print(emp_2.__dict__)
-#print(Employee.__dict__)
-#print(Employee.num_of_emps)
+# print(emp_2.__dict__)
+# print(Employee.__dict__)
+# print(Employee.num_of_emps)
 
-emp_3 = Employee('Steve', 'Veltkamp', 100000)
+emp_3 = Employee("Steve", "Veltkamp", 100000)
 
-#print(Employee.num_of_emps)
+# print(Employee.num_of_emps)

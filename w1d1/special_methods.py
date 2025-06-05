@@ -7,7 +7,7 @@ class Employee:
     def __init__(self, first, last, pay):
         self.first = first
         self.last = last
-        self.email = first + '.' + last + "@company.com"
+        self.email = first + "." + last + "@company.com"
         self.pay = pay
 
     def fullname(self):
@@ -28,13 +28,15 @@ class Employee:
     def __len__(self):
         return len(self.fullname())
 
+
 class Developer(Employee):
     raise_amt = 1.10
 
     def __init__(self, first, last, pay, prog_lang):
         super().__init__(first, last, pay)
-        #Employee.__init__(self, first, last, pay)
+        # Employee.__init__(self, first, last, pay)
         self.prog_lang = prog_lang
+
 
 class Manager(Employee):
     def __init__(self, first, last, pay, employees=None):
@@ -56,22 +58,23 @@ class Manager(Employee):
         for employee in self.employees:
             print(f"--> {employee.fullname()}")
 
-dev_1 = Developer('Corey', 'Schafer', 50000, 'Python')
-dev_2 = Developer('Test', 'Employee', 60000, 'Java')
-man_1 = Manager('Todd', 'Howard', 200000, [dev_1])
+
+dev_1 = Developer("Corey", "Schafer", 50000, "Python")
+dev_2 = Developer("Test", "Employee", 60000, "Java")
+man_1 = Manager("Todd", "Howard", 200000, [dev_1])
 
 print(repr(dev_1))
 print(dev_1)
 print(str(dev_1))
 
-print(1+2)
+print(1 + 2)
 print(int.__add__(1, 2))
 
-print(str.__add__('a', 'b'))
+print(str.__add__("a", "b"))
 
 print(dev_1 + dev_2)
 
-print(len('test'))
-print('test'.__len__())
+print(len("test"))
+print("test".__len__())
 
 print(len(dev_2))

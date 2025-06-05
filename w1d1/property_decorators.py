@@ -13,7 +13,7 @@ class Employee:
 
     @fullname.setter
     def fullname(self, name):
-        first, last = name.split(' ')
+        first, last = name.split(" ")
         self.first = first
         self.last = last
 
@@ -23,10 +23,11 @@ class Employee:
         self.first = None
         self.last = None
 
-emp_1 = Employee('John', "Smith")
 
-emp_1.first = 'Jim'
-emp_1.fullname = 'Todd Howard'
+emp_1 = Employee("John", "Smith")
+
+emp_1.first = "Jim"
+emp_1.fullname = "Todd Howard"
 
 print(emp_1.first)
 print(emp_1.email)
