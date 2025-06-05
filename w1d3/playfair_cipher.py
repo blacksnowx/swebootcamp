@@ -132,6 +132,16 @@ def rectangle_case(string, cipher):
     )
 
 
+def rows_to_columns(cipher):
+    flipped_cipher = []
+    for row in cipher:
+        flipped_cipher.append([])
+    for row in cipher:
+        for i in range(0, len(row)):
+            flipped_cipher[i].append(row[i])
+    return flipped_cipher
+
+
 # PAIR CLASSIFICATION TEST SUITE:
 
 
@@ -149,6 +159,10 @@ def test_column_case_identifies_pairs_in_same_column():
 
 def test_rectangle_case_identifies_pairs_in_different_rows_and_columns():
     assert rectangle_case("MW", CIPHER)
+
+
+def test_rows_to_columns_flips_rows_and_columns_for_cipher():
+    assert rows_to_columns((("D", "A"), ("Y", "N"))) == [["D", "Y"], ["A", "N"]]
 
 
 # ENCRYPTION LOGIC
@@ -177,6 +191,39 @@ def encrypt(string):
                                 encrypted_string += row[i + 1]
                             else:
                                 encrypted_string += row[0]
+        elif column_case(pair, cipher):
+            cipher = rows_to_columns(cipher)
+            for j in range(0, 2):
+                for row in cipher:
+                    for i in range(0, 5):
+                        if pair[j] == row[i]:
+                            if i <= 3:
+                                encrypted_string += row[i + 1]
+                            else:
+                                encrypted_string += row[0]
+        else:
+            first_letter_row = -1
+            first_letter_column = 0
+            first_letter_found = False
+            second_letter_row = -1
+            second_letter_column = 0
+            second_letter_found = False
+            for row in cipher:
+                if not first_letter_found:
+                    first_letter_row += 1
+                if not second_letter_found:
+                    second_letter_row += 1
+                    for i in range(0, 5):
+                        if pair[0] == row[i]:
+                            first_letter_column = i
+                            first_letter_found = True
+                        if pair[1] == row[i]:
+                            second_letter_column = i
+                            second_letter_found = True
+            encrypted_string += (
+                f"{cipher[first_letter_row][second_letter_column]}"
+                f"{cipher[second_letter_row][first_letter_column]}"
+            )
     return encrypted_string
 
 
@@ -189,3 +236,11 @@ def test_encrypt_encrypts_same_case_pairs():
 
 def test_encrypt_encrypts_row_case_pairs():
     assert encrypt("KH") == "CK"
+
+
+def test_encrypt_encrypts_column_case_pairs():
+    assert encrypt("IX") == "RI"
+
+
+def test_encrypt_encrypts_rectangle_case_pairs():
+    assert encrypt("NP") == "EM"
