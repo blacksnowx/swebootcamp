@@ -19,7 +19,7 @@ class Employee:
 
     @fullname.deleter
     def fullname(self):
-        print(f"Delete Name!")
+        print("Delete Name!")
         self.first = None
         self.last = None
 

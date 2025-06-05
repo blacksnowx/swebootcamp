@@ -1,3 +1,6 @@
+import datetime
+
+
 class Employee:
     num_of_emps = 0
     raise_amount = 1.04
@@ -35,10 +38,7 @@ class Employee:
 emp_1 = Employee("Corey", "Schafer", 50000)
 emp_2 = Employee("Test", "User", 60000)
 
-import datetime
-
 my_date = datetime.date(2016, 7, 11)
-
 print(Employee.is_workday(my_date))
 
 # emp_str_1 = 'John-Doe-70000'

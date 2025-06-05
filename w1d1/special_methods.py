@@ -1,4 +1,4 @@
-from w1d1.class_methods_and_static_methods import emp_2, emp_1
+# from w1d1.class_methods_and_static_methods import emp_2, emp_1
 
 
 class Employee:

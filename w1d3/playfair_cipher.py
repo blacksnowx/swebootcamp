@@ -136,19 +136,19 @@ def rectangle_case(string, cipher):
 
 
 def test_same_case_identifies_pairs_with_same_letters():
-    assert same_case("LL", CIPHER) == True
+    assert same_case("LL", CIPHER)
 
 
 def test_row_case_identifies_pairs_in_same_row():
-    assert row_case("NR", CIPHER) == True
+    assert row_case("NR", CIPHER)
 
 
 def test_column_case_identifies_pairs_in_same_column():
-    assert column_case("KZ", CIPHER) == True
+    assert column_case("KZ", CIPHER)
 
 
 def test_rectangle_case_identifies_pairs_in_different_rows_and_columns():
-    assert rectangle_case("MW", CIPHER) == True
+    assert rectangle_case("MW", CIPHER)
 
 
 # ENCRYPTION LOGIC
