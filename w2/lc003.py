@@ -17,5 +17,3 @@ class Solution(object):
                 longest = len(substring)
 
         return longest
-
-        return longest
